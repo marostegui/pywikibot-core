@@ -1,0 +1,24 @@
+{
+	"name": "wikimedia/mediawiki-config",
+	"description": "MediaWiki configuration for the Wikimedia farm",
+	"require": {
+		"mongofill/mongofill": "dev-master",
+		"perftools/xhgui": "dev-master"
+	},
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "0.9.2",
+		"phpunit/phpunit": "4.8.31"
+	},
+	"scripts": {
+		"test": [
+			"phpunit",
+			"parallel-lint --exclude multiversion/vendor --ignore-fails ."
+		]
+	},
+	"config": {
+		"classmap-authoritative": true,
+		"optimize-autoloader": true,
+		"prepend-autoloader": false,
+		"vendor-dir": "multiversion/vendor"
+	}
+}
